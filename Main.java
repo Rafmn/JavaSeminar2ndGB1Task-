@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Person irina = new PersonIrina("Ирина", 35);
-        Person vasya = new PersonIrina("Вася", 5);
-        Person vasya1 = new PersonIrina("Вася", 45);
-        Person masha = new PersonIrina("Маша", 4);
-        Person jane = new PersonIrina("Женя", 7);
-        Person ivan = new PersonIrina("Ваня", 3);
-        Person ivanPetrovich = new PersonIrina("Иван Петрович", 60);
-        Person mariaAleksandrovna = new PersonIrina("Мария Александровна", 55);
+        Person irina = new PersonWoman("Ирина", 35);
+        Person vasya = new PersonMan("Вася", 5);
+        Person vasya1 = new PersonMan("Вася", 45);
+        Person masha = new PersonWoman("Маша", 4);
+        Person jane = new PersonWoman("Женя", 7);
+        Person ivan = new PersonMan("Ваня", 3);
+        Person ivanPetrovich = new PersonMan("Иван Петрович", 60);
+        Person mariaAleksandrovna = new PersonWoman("Мария Александровна", 55);
         GeoTree gt = new GeoTree();
         gt.append(irina, vasya);
         gt.append(irina, masha);
@@ -32,5 +32,8 @@ public class Main {
         System.out.println();
         System.out.println("Вывод всего списка:");
         System.out.println(writeF.spend());
+
+        System.out.println(((Person) irina).getGender()); // Запрос пола irina
+
     }
 }

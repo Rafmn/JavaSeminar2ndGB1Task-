@@ -1,6 +1,7 @@
 public abstract class Person {
     public String fullName;
     public int age;
+    Gender gender;
 
     public Person(String fullName, int age) {
         this.fullName = fullName;
@@ -13,6 +14,10 @@ public abstract class Person {
 
     public int getAge() {
         return age;
+    }
+
+    public Gender getGender() {
+        return gender;
     }
 
 }
