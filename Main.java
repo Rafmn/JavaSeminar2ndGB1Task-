@@ -22,11 +22,11 @@ public class Main {
         System.out.println("Вывод дедушек и бабушек vasya:");
         System.out.println(new Reserch(gt).spend(vasya, Relationship.grandchildren)); // Вывод дедушек и бабушек vasya
         System.out.println("Вывод всех людей с отношениями grandparents:");
-        System.out.println(new Reserch(gt).spend1(Relationship.grandparents)); // Вывод всех людей с отношениями grandparents
+        System.out.println(new Reserch(gt).spendGrand(Relationship.grandparents)); // Вывод всех людей с отношениями grandparents
         System.out.println("Вывод всех людей старше 10:");
-        System.out.println(new Reserch(gt).spend2(10)); // Вывод всех людей старше 10
+        System.out.println(new Reserch(gt).spendOlder(10)); // Вывод всех людей старше 10
         System.out.println("Вывод людей старше vasya:");
-        System.out.println(new Reserch(gt).spend3(vasya)); // Вывод людей старше vasya
+        System.out.println(new Reserch(gt).spendOlderPerson(vasya)); // Вывод людей старше vasya
 
         WriteFile writeF = new WriteFile(gt);
         System.out.println();
@@ -35,5 +35,8 @@ public class Main {
 
         System.out.println(((Person) irina).getGender()); // Запрос пола irina
 
+        if (irina.compareTo(ivanPetrovich) > 0) {
+            System.out.println(irina.getFullName() + " моложе, чем  " + ivanPetrovich.getFullName());
+        }
     }
 }

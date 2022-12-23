@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 
-public class Reserch {
+public class Reserch implements Comparator<Person>{
     ArrayList<String> result = new ArrayList<>();
     ArrayList<Node> tree;
 
@@ -11,38 +12,43 @@ public class Reserch {
 
     public ArrayList<String> spend(Person p, Relationship re) {
         for (Node t : tree) {
-            if (t.p1.fullName == p.fullName && t.re == re) {
-                result.add(t.p2.fullName + " " + t.p2.age + " лет");
+            if (t.p1.getFullName() == p.getFullName() && t.re == re) {
+                result.add(t.p2.getFullName() + " " + t.p2.getAge() + " лет");
             }
         }
         return result;
     }
 
-     public ArrayList<String> spend1(Relationship re) {
+     public ArrayList<String> spendGrand(Relationship re) {
         for (Node t : tree) {
             if (t.re == re) {
-                result.add(t.p1.fullName + " " + t.p1.age + " лет");
+                result.add(t.p1.getFullName() + " " + t.p1.getAge() + " лет");
             }
         }
         return result;
     }
 
-    public ArrayList<String> spend2(int age) {
+    public ArrayList<String> spendOlder(int age) {
         for (Node t : tree) {
-            if (t.p1.age > age) {
-                result.add(t.p1.fullName + " " + t.p1.age + " лет");
+            if (t.p1.getAge() > age) {
+                result.add(t.p1.getFullName() + " " + t.p1.getAge() + " лет");
             }
         }
         return result;
     }
 
-    public ArrayList<String> spend3(Person p) {
+    public ArrayList<String> spendOlderPerson(Person p) {
         for (Node t : tree) {
-            if (t.p1.age > p.age) {
-                result.add(t.p1.fullName + " " + t.p1.age + " лет");
+            if (t.p1.getAge() > p.getAge()) {
+                result.add(t.p1.getFullName() + " " + t.p1.getAge() + " лет");
             }
         }
         return result;
+    }
+
+    @Override
+    public int compare(Person arg0, Person arg1) {
+        return arg0.getAge() - arg1.getAge();
     }
 
 }

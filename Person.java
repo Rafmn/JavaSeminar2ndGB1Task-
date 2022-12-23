@@ -1,6 +1,6 @@
-public abstract class Person {
-    public String fullName;
-    public int age;
+public abstract class Person implements Comparable<Person> {
+    private String fullName;
+    private int age;
     Gender gender;
 
     public Person(String fullName, int age) {
@@ -18,6 +18,15 @@ public abstract class Person {
 
     public Gender getGender() {
         return gender;
+    }
+
+    @Override
+    public int compareTo(Person p) {
+        return this.getFullName().compareTo(p.getFullName());
+    }
+
+    public int compare(Person ivanPetrovich) {
+        return 0;
     }
 
 }

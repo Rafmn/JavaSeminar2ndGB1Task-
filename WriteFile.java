@@ -12,7 +12,7 @@ public class WriteFile {
 
     public ArrayList<String> spend() {
         for (Node t : tree) {      
-            result.add(t.p1.fullName + " " + t.p1.age + " " + t.re + " " + t.p2.fullName + " " + t.p2.age);
+            result.add(t.p1.getFullName() + " " + t.p1.getAge() + " " + t.re + " " + t.p2.getFullName() + " " + t.p2.getAge());
         }
     
         
